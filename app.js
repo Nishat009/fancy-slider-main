@@ -22,10 +22,13 @@ const showImages = (images) => {
   images.forEach(image => {
     let div = document.createElement('div');
     div.className = 'col-lg-3 col-md-4 col-xs-6 img-item mb-2';
+
+    // add extra-1
     div.innerHTML = ` <img class="img-fluid img-thumbnail" onclick=selectItem(event,"${image.webformatURL}") src="${image.webformatURL}" alt="${image.tags}">
     <button class="btn btn-success btn-sm ml-4"><i class="far fa-heart"></i>${image.favorites}</button>
     <button class="btn btn-danger btn-sm ml-4"><i class="fas fa-cloud-download-alt"></i>${image.downloads}</button>
     `;
+
     gallery.appendChild(div)
   })
   toggleSpinner();
@@ -148,7 +151,7 @@ sliderBtn.addEventListener('click',function(){
 
 
 
-// extra work- adding spinner
+// extra work-2 adding spinner
 const toggleSpinner=()=>{
   const spinner =document.getElementById('loading-spinner');
   spinner.classList.toggle('d-none');
